@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+
+     
+
+            window.addEventListener('DOMContentLoaded', () => {
+                document.getElementById("button1").addEventListener('click', (event) => {
+                    document.getElementById('elemento').innerText = document.getElementById('nombre').value;
+                    document.getElementById("button2").disabled=false;
+                });
+
+
+
+                document.getElementById("button2").addEventListener('click', (event) => {
+                    let edad=parseInt(document.getElementById('edad').value);
+                    if (edad >= 18) {
+
+                        document.getElementById('elemento').innerText+=" es mayor de edad ";
+                    } else {
+                        document.getElementById('elemento').innerText+=" es menor de edad";
+                    }
+                });
+
+            });
+
+
+      
+    </script>
+</head>
+
+<body>
+    <h1 id="elemento"></h1>
+
+    <form>
+        <label for="nombre">Escribe tu nombre: </label>
+        <input type="text" id="nombre" />
+        <button type="button" id="button1">Click</button>
+        <label for="edad">Escribe tu edad: </label>
+        <input type="text" id="edad" />
+        <button type="button" id="button2" disabled>Click</button>
+    </form>
+</body>
+
+</html>
